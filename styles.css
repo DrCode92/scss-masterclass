@@ -1,0 +1,38 @@
+.father {
+    display: flex;
+    justify-content: space-around; /** Main Axis */
+    height: 100vh;
+    align-items: center;
+}
+
+.child {
+    width: 400px;
+    height: 200px;
+    background: peru;
+    color: white;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child:nth-child(2) {
+    background: black;
+    flex-grow: 1;
+}
+
+
+/** inline-block 문제점  */
+/*
+.box {
+    background: blue;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 2px;
+    display: inline-block;
+    color: white;
+}
+
+.box:nth-child(3) {
+    margin-left: 20px;
+} */
