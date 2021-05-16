@@ -1,0 +1,14 @@
+@import "_variables";
+@import "_mixins";
+
+a {
+  margin-bottom: 10px;
+
+  &:nth-child(odd) {
+    @include link(blue);
+  }
+
+  &:nth-child(even) {
+    @include link(red);
+  }
+}
