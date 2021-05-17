@@ -1,14 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Caladea:400,400i&display=swap');
 @import "_variables";
-@import "_mixins";
+@import "_titles";
 
-a {
-  margin-bottom: 10px;
+* {
+  box-sizing: border-box;
+}
 
-  &:nth-child(odd) {
-    @include link(blue);
+body {
+  font-family: "Caladea";
+  padding: 0px 140px;
+  padding-top: 70px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  padding: 0px 140px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      display: flex;
+      text-transform: uppercase;
+      font-size: 10px;
+      &:first-child {
+        li {
+          margin-right: 30px;
+          @extend %miniTitle;
+        }
+      }
+    }
   }
+}
 
-  &:nth-child(even) {
-    @include link(red);
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1491956142110-8a4226a12077?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 80px;
+  h4{
+    @extend %miniTitle;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 48px;
+    width: 40%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  a {
+    width: 22%;
+    background-color: white;
+    padding: 20px 0px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    @extend %miniTitle;
+    font-size: 12px;
+    transition: color .3s linear, background 0.3s linear;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
 }
