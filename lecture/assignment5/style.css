@@ -1,0 +1,73 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
+  grid-template-rows: 10vw repeat(2, minmax(360px, 1fr));
+  grid-auto-rows: 60vh;
+}
+
+header {
+    height: 15vh;
+    /* grid-template-rows: 100vw; */
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+}
+
+.solid {
+    padding: 30px;
+}
+
+.solid > ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:first-child {
+    font-size: 25px;
+    text-align: center;
+}
+li:last-child {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.solid:nth-of-type(1) {
+    background-color: #BFBDA6;
+}
+.solid:nth-of-type(3) {
+    background-color: #FE4915;
+}
+.solid:nth-of-type(5) {
+    background-color: #847F95;
+}
+.solid:nth-of-type(6) {
+    background-color: #D0FF71;
+}
+.solid:nth-of-type(7) {
+    background-color: #993433;
+}
+.solid:nth-of-type(8) {
+    background-color: #39A9F9;
+}
+.solid:nth-of-type(10) {
+    background-color: #41907A;
+}
+.solid:nth-of-type(12) {
+    background-color: #E3C4E4;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
