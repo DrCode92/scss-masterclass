@@ -1,81 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:400,500&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Caladea:400,400i&display=swap');
 @import "_variables";
-@import "_titles";
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Caladea";
-  padding: 0px 140px;
-  padding-top: 70px;
-}
-
-header {
-  position: fixed;
-  width: 100%;
-  height: 70px;
-  top: 0;
-  left: 0;
-  padding: 0px 140px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  nav {
-    width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 100vh;
+  background-color: $bg;
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr 1.5fr;
+  grid-template-rows: 0.7fr 5fr 0.7fr;
+  gap: 1px;
+  & > *:not(script) {
+    background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    ul {
+    color: $bg;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  .menu {
+    grid-column-start: -2;
+  }
+  .center-image {
+    grid-column: 2 / -2;
+    grid-row: 2 / -2;
+    background-image: url(https://images.unsplash.com/photo-1531670440648-a439d0c42b11?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80);
+    background-size: cover;
+    background-position: center;
+  }
+  .number__row {
+    background-color: $bg;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    height: 100%;
+    align-items: stretch;
+    .number {
+      background-color: white;
       display: flex;
-      text-transform: uppercase;
-      font-size: 10px;
-      &:first-child {
-        li {
-          margin-right: 30px;
-          @extend %miniTitle;
-        }
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: color 0.3s linear, background-color 0.3s linear;
+      &:hover {
+        background-color: $bg;
+        color: white;
       }
     }
   }
+  .scrolling__text {
+    grid-column-start: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    span {
+      animation: scrollText 2s linear infinite forwards;
+    }
+  }
 }
 
-.hero {
-  height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1491956142110-8a4226a12077?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  margin-bottom: 80px;
-  h4{
-    @extend %miniTitle;
-    margin-bottom: 30px;
+@keyframes scrollText {
+  0% {
+    transform: translateX(-100px);
   }
-  h3 {
-    font-size: 48px;
-    width: 40%;
-    text-align: center;
-    margin-bottom: 50px;
+  50% {
+    transform: translateX(100px);
   }
-  a {
-    width: 22%;
-    background-color: white;
-    padding: 20px 0px;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    @extend %miniTitle;
-    font-size: 12px;
-    transition: color .3s linear, background 0.3s linear;
-    &:hover {
-      background-color: black;
-      color: white;
-    }
+  100% {
+    transform: translateX(-100px);
   }
 }
