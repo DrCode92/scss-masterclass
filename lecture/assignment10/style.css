@@ -1,0 +1,124 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 60vw 3vw 37vw;
+  grid-template-rows: 1fr;
+}
+
+.conference {
+    background-color: #FF7300;
+    display: grid;
+    grid-template-rows: repeat(6, 15vh);
+    grid-auto-rows: 15vh;
+    padding: 10px;
+}
+.wrapper {
+    background-color: #FF0501;
+    display: grid;
+    grid-template-columns: 40px 3fr minmax(200px, 1.5fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+    border-top: 2px solid #FF0501;
+    border-left: 2px solid #FF0501;
+    border-right: 2px solid #FF0501;
+}
+.wrapper:nth-child(2) {
+    background-color: white;
+    border: 2px solid white;
+}
+.wrapper:nth-child(2) > span:not(span:last-child) {
+    color: white;
+}
+.wrapper:nth-child(2) > div > span {
+    background-color: white;
+}
+.wrapper:last-child {
+    border-bottom: 2px solid #FF0501;
+}
+.category {
+    background-color: #FF7300;
+    grid-column: 1 / 2;
+    grid-row: span 2;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    padding: 10px;
+    color: #FF0501;
+}
+.subject {
+    background-color: #FF7300;
+    grid-column: 2 / 3;
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #FF0501;
+}
+
+.field {
+    background-color: #FF7300;
+    grid-column: 3 / -1;
+    color: #FF0501;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px;
+}
+
+.year {
+    background-color: #FF7300;
+}
+.category, 
+.field, 
+.year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.year__text {
+    background-color: #FF0501;
+    height: 50%;
+    width: 80%;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF7300;
+}
+
+.title {
+    height: 105vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    position: relative;
+}
+
+.inc, .copyright {
+    padding: 10px;
+    height: 55%;
+    width: 70%;
+    background-color: #FF00FF;
+    writing-mode: vertical-rl;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.copyright {
+    transform: rotate(180deg);
+    background-color: #1901FF;
+}
+
+i {
+    position: absolute;
+    z-index: 2;
+    bottom: 50%;
+}
