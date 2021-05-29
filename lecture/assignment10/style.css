@@ -93,13 +93,18 @@ body {
 }
 
 .title {
-    height: 105vh;
+    height: 100vh;
+    width: 3vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     font-size: 30px;
     position: relative;
+    background-color: #FF7300;
+    position: fixed;
+    top: 0;
+    left: 60vw;
 }
 
 .inc, .copyright {
@@ -117,8 +122,54 @@ body {
     background-color: #1901FF;
 }
 
-i {
+.title > i {
     position: absolute;
     z-index: 2;
-    bottom: 50%;
+    bottom: 47%;
+}
+
+.attendants {
+    background-color: #FF0501;
+    height: 100vh;
+    width: 37vw;
+    display: grid;
+    grid-template-rows: 5vh 95vh;
+    position: fixed;
+    top: 0;
+    left: 63vw;
+    right: 0;
+    z-index: -1;
+}
+
+.type {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    grid-column: 1 / -1;
+}
+
+.attendants__wrapper {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.attendants__content {
+    border-top: 2px solid black;
+    width: 90%;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.attendants__content-title {
+    font-size: 30px;
+    margin-bottom: 1px;
+}
+
+.attendants__content-desc {
+    font-size: 18px;
+    letter-spacing: -1px;
 }
